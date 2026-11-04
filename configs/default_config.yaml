@@ -1,0 +1,51 @@
+# Default Pipeline Configuration
+# Multilingual Regional Language Sentiment Analysis - Modules 1 & 2
+
+paths:
+  raw_text_dir: "data/raw/text"
+  raw_audio_dir: "data/raw/audio"
+  processed_dir: "data/processed"
+  metadata_dir: "data/metadata"
+  output_dir: "outputs"
+
+text_model:
+  model_name: "xlm-roberta-base"
+  muril_model_name: "google/muril-base-cased"
+  indicbert_model_name: "ai4bharat/IndicBERTv2-MLM-only"
+  num_emotions: 5
+  emotion_classes: ["joy", "sadness", "anger", "fear", "neutral"]
+  max_seq_length: 128
+  batch_size: 16
+  device: "cpu"
+  pooling_method: "mean"
+  high_accuracy_ensemble: true
+  regional_languages:
+    - "tulu"
+    - "assamese"
+    - "konkani"
+    - "santali"
+    - "bodo"
+    - "bhojpuri"
+    - "dogri"
+    - "tamil"
+    - "telugu"
+    - "malayalam"
+    - "kannada"
+
+audio:
+  target_sample_rate: 16000
+  target_channels: 1
+  max_duration_seconds: 30.0
+  min_duration_seconds: 0.3
+  segment_duration_seconds: 15.0
+  segment_overlap_seconds: 1.0
+  preemphasis_coef: 0.97
+  normalize_amplitude: true
+  xlsr_model_name: "facebook/wav2vec2-xls-r-300m"
+  opensmile_feature_set: "eGeMAPSv02"
+
+sraavaani:
+  api_endpoint: null
+  api_key: null
+  timeout_seconds: 30
+  model_id: "sraavaani-asr-multilingual"

@@ -1,0 +1,4 @@
+sample_id,audio_path,language,transcript,sentiment,dialect,source
+syn_aud_01,data/raw/audio/synthetic_tcy_sample.wav,tulu,ಎಡ್ಡೆ ಉಂಡು,positive,Common Tulu,Synthetic_Fixture
+syn_aud_02,data/raw/audio/synthetic_bho_sample.wav,bhojpuri,का बात बा,positive,Bhojpuriya,Synthetic_Fixture
+syn_aud_long,data/raw/audio/synthetic_long_sample.wav,assamese,,unlabeled,Eastern,Synthetic_Fixture

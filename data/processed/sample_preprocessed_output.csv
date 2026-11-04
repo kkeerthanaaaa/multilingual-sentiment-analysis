@@ -1,0 +1,6 @@
+sample_id,text,language,secondary_language,input_type,language_style,audio_path,sentiment,script,dialect,source,processed_text,language_confidence,is_ambiguous
+syn_tcy_01,ದಾನೆ ಮಾರ್ರೆ ಮಸ್ತ್ ಎಡ್ಡೆ ಉಂಡು! 😊,tulu,,direct,,,positive,Kannada,Common Tulu,Synthetic_Fixture,ದಾನೆ ಮಾರ್ರೆ ಮಸ್ತ್ ಎಡ್ಡೆ ಉಂಡು! 😊,0.85,False
+syn_tcy_02,"ಈ ಕೆಲಸ ಹಾಳ್ ಆತ್ಂಡ್, ಎಂಕ್ ಇಜ್ಜಿ ಇಷ್ಟ.",tulu,,direct,,,negative,Kannada,Common Tulu,Synthetic_Fixture,"ಈ ಕೆಲಸ ಹಾಳ್ ಆತ್ಂಡ್, ಎಂಕ್ ಇಜ್ಜಿ ಇಷ್ಟ.",0.85,False
+syn_asm_01,এই চলচ্চিত্ৰখন সঁচাকৈয়ে বৰ ভাল লাগিল! ❤️,assamese,,direct,,,positive,Bengali-Assamese,Eastern Assamese,Synthetic_Fixture,এই চলচ্চিত্ৰখন সঁচাকৈয়ে বৰ ভাল লাগিল! ❤️,0.9,False
+syn_asm_02,"নহয় নহয়, এইটো একেবাৰে বেয়া কাম হ'ল।",assamese,,direct,,,negative,Bengali-Assamese,Kamrupi,Synthetic_Fixture,"নহয় নহয়, এইটো একেবাৰে বেয়া কাম হ'ল।",0.9,False
+syn_kok_01,हो सिनेमा खूब सोबीत आसा! 👍,konkani,,direct,,,positive,Devanagari,Goan,Synthetic_Fixture,हो सिनेमा खूब सोबीत आसा! 👍,0.82,False

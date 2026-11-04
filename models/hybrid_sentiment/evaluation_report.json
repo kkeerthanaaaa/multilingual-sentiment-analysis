@@ -1,0 +1,31 @@
+{
+  "model_type": "hybrid",
+  "model_path": "models\\hybrid_sentiment\\hybrid_sentiment_pipeline.joblib",
+  "train_samples": 806,
+  "test_samples": 202,
+  "overall_accuracy": 0.7426,
+  "macro_f1": 0.578,
+  "macro_precision": 0.7187,
+  "macro_recall": 0.5248,
+  "per_language_accuracy": {
+    "assamese": 0.7714,
+    "bhojpuri": 0.75,
+    "bodo": 0.7727,
+    "dogri": 0.3333,
+    "kannada": 0.697,
+    "konkani": 0.5,
+    "malayalam": 0.72,
+    "santali": 1.0,
+    "tamil": 0.85,
+    "telugu": 0.6667,
+    "tulu": 0.6667
+  },
+  "classification_report": "              precision    recall  f1-score   support\n\n       anger       0.60      0.50      0.55         6\n        fear       1.00      0.40      0.57         5\n         joy       0.74      0.82      0.77        92\n     neutral       0.50      0.17      0.25         6\n     sadness       0.76      0.74      0.75        93\n\n    accuracy                           0.74       202\n   macro avg       0.72      0.52      0.58       202\nweighted avg       0.74      0.74      0.74       202\n",
+  "classes": [
+    "anger",
+    "fear",
+    "joy",
+    "neutral",
+    "sadness"
+  ]
+}

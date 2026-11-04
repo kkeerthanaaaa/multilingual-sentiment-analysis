@@ -1,0 +1,20 @@
+sample_id,text,language,secondary_language,input_type,sentiment,script,dialect,source
+syn_tcy_01,"ದಾನೆ ಮಾರ್ರೆ ಮಸ್ತ್ ಎಡ್ಡೆ ಉಂಡು! 😊",tulu,,direct,positive,Kannada,Common Tulu,Synthetic_Fixture
+syn_tcy_02,"ಈ ಕೆಲಸ ಹಾಳ್ ಆತ್ಂಡ್, ಎಂಕ್ ಇಜ್ಜಿ ಇಷ್ಟ.",tulu,,direct,negative,Kannada,Common Tulu,Synthetic_Fixture
+syn_asm_01,"এই চলচ্চিত্ৰখন সঁচাকৈয়ে বৰ ভাল লাগিল! ❤️",assamese,,direct,positive,Bengali-Assamese,Eastern Assamese,Synthetic_Fixture
+syn_asm_02,"নহয় নহয়, এইটো একেবাৰে বেয়া কাম হ'ল।",assamese,,direct,negative,Bengali-Assamese,Kamrupi,Synthetic_Fixture
+syn_kok_01,"हो सिनेमा खूब सोबीत आसा! 👍",konkani,,direct,positive,Devanagari,Goan,Synthetic_Fixture
+syn_kok_02,"माका हें काम वायट दिसलें, नाका म्हाका.",konkani,,direct,negative,Devanagari,Mangalorean,Synthetic_Fixture
+syn_sat_01,"ᱱᱚᱣᱟ ᱯᱷᱤᱞᱢ ᱟᱹᱰᱤ ᱵᱷᱟᱹᱜᱤ ᱜᱮᱭᱟ! 🌟",santali,,direct,positive,Ol Chiki,Mayurbhanj,Synthetic_Fixture
+syn_sat_02,"ᱱᱚᱝᱠᱟ ᱫᱚ ᱵᱟᱝ ᱴᱷᱤᱠ ᱠᱟᱱᱟ, ᱵᱟᱹᱲᱤᱡ ᱜᱮᱭᱟ.",santali,,direct,negative,Ol Chiki,Midnapore,Synthetic_Fixture
+syn_brx_01,"नोंनि सावगारिया जोबोर मोजां जादों! 🎉",bodo,,direct,positive,Devanagari,Western Bodo,Synthetic_Fixture
+syn_brx_02,"दा बुं, बेयो गाज्रि बाथ्रा।",bodo,,direct,negative,Devanagari,Eastern Bodo,Synthetic_Fixture
+syn_bho_01,"का बात बा! ई गाना त एकदम नीक लागल। 🔥",bhojpuri,,direct,positive,Devanagari,Bhojpuriya,Synthetic_Fixture
+syn_bho_02,"नाहीं भाई, ई एकदम बकवास आ खराब बा।",bhojpuri,,direct,negative,Devanagari,Bhojpuriya,Synthetic_Fixture
+syn_doi_01,"डोगरी गाना बड़ा शैल ते चंगा लगा! 👏",dogri,,direct,positive,Devanagari,Standard Dogri,Synthetic_Fixture
+syn_doi_02,"एह काम बिल्कुल मंदा ऐ, नेईं करणा.",dogri,,direct,negative,Devanagari,Standard Dogri,Synthetic_Fixture
+syn_mix_01,"Movie was very bad, ಎಂಕ್ ಇಷ್ಟ ಇಜ್ಜಿ at all!",tulu,en,code_mixed,negative,Mixed,Urban,Synthetic_Fixture
+syn_mix_02,"Today feeling super awesome, का बात बा bhai!",bhojpuri,en,code_mixed,positive,Mixed,Urban,Synthetic_Fixture
+syn_neu_01,"आजुक तापमान 25 डिग्री सेल्सियस बा।",bhojpuri,,direct,neutral,Devanagari,Bhojpuriya,Synthetic_Fixture
+syn_dup_01,"ದಾನೆ ಮಾರ್ರೆ ಮಸ್ತ್ ಎಡ್ಡೆ ಉಂಡು! 😊",tulu,,direct,positive,Kannada,Common Tulu,Synthetic_Fixture
+syn_mix_01,"ഹായ്, സുഖമാണോ?",malayalam,direct,neutral,malayalam,code_mixed,Synthetic_Fixture

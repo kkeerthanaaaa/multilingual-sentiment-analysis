@@ -1,0 +1,380 @@
+# Language Catalog for Multilingual Regional Sentiment Analysis
+# Target: 7 Low-Resource Indian Languages
+# Documents scripts, ISO codes, dialect regions, linguistic markers, and model coverage realities.
+
+languages:
+  tulu:
+    iso_639_3: "tcy"
+    iso_639_1: null
+    primary_name: "Tulu"
+    script: "Kannada"
+    script_code: "Knda"
+    unicode_range: ["0C80", "0CFF"]
+    historical_scripts: ["Tigalari"]
+    regions: ["Dakshina Kannada", "Udupi", "Kasaragod (Tulu Nadu)"]
+    dialects: ["Common Tulu", "Brahmin Tulu", "Jain Tulu", "Mogaveera Tulu"]
+    negation_words: ["ಇಜ್ಜಿ", "ಇಜ್ಜ", "ಅತ್ತ", "ಅತ್ತ್", "ಬೊಡ್ಚಿ", "ಬೋಡ್ಚಿ", "ijji", "atta", "bodchi"]
+    sentiment_lexicon_examples:
+      positive: ["ಎಡ್ಡೆ", "ಲಾಯ್ಕ್", "ಮಸ್ತ್ ಎಡ್ಡೆ", "ಖುಷಿ", "edde", "laik", "mast edde"]
+      negative: ["ಹಾಳ್", "ಕಾಟ", "ಬೇಜಾರ್", "ಕೋಪ", "haal", "kaata", "bejaar"]
+    slang_expressions: ["ದಾನೆ ಮಾರ್ರೆ", "ಕುಡ್ಲ", "ಬಾವ", "ಮಾರೆರೆ", "ಪೊಂಡೆ"]
+    xlm_roberta_coverage:
+      status: "Indirect / Subword Tokenization Only"
+      notes: "Tulu is not in XLM-R's 100 officially pretrained languages. Kannada-script Tulu text is tokenized using Kannada subwords with potential representation gap."
+    indicbert_coverage:
+      v1_supported: false
+      v2_supported: false
+      notes: "Neither IndicBERT v1 (12 languages) nor v2 explicitly included dedicated Tulu pretraining corpora."
+    langdetect_coverage:
+      supported: false
+      notes: "Standard langdetect library cannot identify Tulu. Script detection resolves to Kannada (kn)."
+    known_data_resources:
+      - name: "SraVaani (RESPIN / IISc)"
+        modality: "Audio + Transcript"
+        url: "https://sravaani.iisc.ac.in/"
+        status: "Restricted research access / API keys required"
+      - name: "Tulu Wikipedia / DravidianLangTech"
+        modality: "Text"
+        status: "Open access (CC-BY-SA)"
+
+  assamese:
+    iso_639_3: "asm"
+    iso_639_1: "as"
+    primary_name: "Assamese"
+    script: "Bengali-Assamese"
+    script_code: "Beng"
+    unicode_range: ["0980", "09FF"]
+    distinctive_characters: ["ৰ", "ৱ"]  # U+09F0 (ro), U+09F1 (wo)
+    regions: ["Assam", "Arunachal Pradesh"]
+    dialects: ["Eastern Assamese (Standard)", "Kamrupi", "Goalpariya"]
+    negation_words: ["নহয়", "নাই", "নালাগে", "নকৰোঁ", "নোৱাৰো", "nohoy", "nai", "nalage"]
+    sentiment_lexicon_examples:
+      positive: ["ভাল", "ধুনীয়া", "উৎকৃষ্ট", "সুন্দৰ", "আনন্দ", "bhal", "dhuniya"]
+      negative: ["বেয়া", "অসুবিধা", "দুখ", "ভুল", "beya", "dukh"]
+    slang_expressions: ["হেৰৌ", "দেউতা", "মহা", "কি খবৰ", "লেঠা"]
+    xlm_roberta_coverage:
+      status: "Supported"
+      notes: "Included in XLM-RoBERTa 100 language set."
+    indicbert_coverage:
+      v1_supported: true
+      v2_supported: true
+      notes: "Full official support in IndicBERT v1 and IndicBERT v2."
+    langdetect_coverage:
+      supported: false
+      notes: "Standard langdetect library often confuses Assamese with Bengali (bn) due to shared script, except when distinctive characters ৰ or ৱ appear."
+    known_data_resources:
+      - name: "AI4Bharat IndicCorp / IndicNLP"
+        modality: "Text"
+        status: "Open access"
+      - name: "LDC-IL Assamese Monolingual & Speech Corpus"
+        modality: "Text + Speech"
+        status: "Academic license / Registration required"
+
+  konkani:
+    iso_639_3: "kok"
+    iso_639_1: null
+    primary_name: "Konkani"
+    script: "Devanagari"
+    script_code: "Deva"
+    unicode_range: ["0900", "097F"]
+    alternative_scripts: ["Kannada (Knda)", "Latin / Romi (Latn)", "Malayalam (Mlym)"]
+    regions: ["Goa", "Coastal Karnataka (Mangalore/Karwar)", "Maharashtra", "Kerala (Kochi)"]
+    dialects: ["Goan Konkani", "Mangalorean Konkani", "Bardeskari", "Saxtti"]
+    negation_words: ["ना", "न्हय", "नाका", "नुसत", "na", "nhay", "naka"]
+    sentiment_lexicon_examples:
+      positive: ["बोरें", "सोबीत", "आनंद", "बेस", "borem", "sobit"]
+      negative: ["वायट", "बेजार", "दुख्ख", "खारें", "vaitt", "bejar"]
+    slang_expressions: ["पाव", "भावा", "बबड्या", "दोस्त", "कसो आसा"]
+    xlm_roberta_coverage:
+      status: "Partial / Cross-lingual Transfer"
+      notes: "Not explicitly modeled in XLM-R pretraining list; relies on Devanagari transfer from Marathi/Hindi."
+    indicbert_coverage:
+      v1_supported: false
+      v2_supported: true
+      notes: "Supported in IndicBERT v2 (gom / kok). Not in v1."
+    langdetect_coverage:
+      supported: false
+      notes: "Not supported by standard langdetect; Devanagari text frequently misidentified as Hindi or Marathi."
+    known_data_resources:
+      - name: "AI4Bharat IndicCorp v2 (gom)"
+        modality: "Text"
+        status: "Open access"
+      - name: "LDC-IL Konkani Corpus"
+        modality: "Text + Speech"
+        status: "Restricted academic license"
+
+  santali:
+    iso_639_3: "sat"
+    iso_639_1: null
+    primary_name: "Santali"
+    script: "Ol Chiki"
+    script_code: "Olck"
+    unicode_range: ["1C50", "1C7F"]
+    alternative_scripts: ["Devanagari", "Bengali", "Latin"]
+    regions: ["Jharkhand", "Odisha", "West Bengal", "Assam", "Bihar"]
+    dialects: ["Parganas", "Mayurbhanj", "Midnapore"]
+    negation_words: ["ᱵᱟᱝ", "ᱵᱟ", "ᱵᱟᱭ", "ᱟᱞᱚ", "bang", "ba", "alo"]
+    sentiment_lexicon_examples:
+      positive: ["ᱵᱷᱟᱹᱜᱤ", "ᱱᱟᱯᱟᱭ", "ᱨᱟᱹᱥᱠᱟᱹ", "bhagi", "napai", "raska"]
+      negative: ["ᱵᱟᱹᱲᱤᱡ", "ᱫᱩᱠᱷ", "ᱵᱟᱹᱲᱤᱪ", "barij", "dukh"]
+    slang_expressions: ["ᱦᱮᱸᱫᱟ", "ᱜᱟᱛᱮ", "ᱦᱚᱯᱚᱱ", "ᱡᱚᱦᱟᱨ"]
+    xlm_roberta_coverage:
+      status: "Unsupported / Byte Fallback"
+      notes: "Ol Chiki script characters are not standardly covered in XLM-R vocabulary; fall back to byte-level BPE tokens."
+    indicbert_coverage:
+      v1_supported: false
+      v2_supported: true
+      notes: "IndicBERT v2 includes Santali (sat) in Ol Chiki and Latin scripts."
+    langdetect_coverage:
+      supported: false
+      notes: "langdetect has no model for Santali. Ol Chiki Unicode block can be deterministically identified by script."
+    known_data_resources:
+      - name: "IndicCorp v2 (sat)"
+        modality: "Text (Ol Chiki)"
+        status: "Open access"
+      - name: "LDC-IL Santali Corpus"
+        modality: "Text + Speech"
+        status: "Restricted academic license"
+
+  bodo:
+    iso_639_3: "brx"
+    iso_639_1: null
+    primary_name: "Bodo"
+    script: "Devanagari"
+    script_code: "Deva"
+    unicode_range: ["0900", "097F"]
+    historical_scripts: ["Latin", "Bengali-Assamese"]
+    regions: ["Bodoland (Assam)", "West Bengal", "Meghalaya"]
+    dialects: ["Western Bodo", "Eastern Bodo", "Southern Bodo"]
+    negation_words: ["दा", "नङा", "गैया", "हाया", "da", "nonga", "gaiya"]
+    sentiment_lexicon_examples:
+      positive: ["मोजां", "गोजोन", "सबिन", "रंजा", "mojang", "gojon"]
+      negative: ["गाज्रि", "दुखु", "खैफोद", "gajri", "dukhu"]
+    slang_expressions: ["आदै", "नों", "दं", "बिया"]
+    xlm_roberta_coverage:
+      status: "Cross-lingual Devanagari Transfer"
+      notes: "Bodo is not explicitly isolated in XLM-R pretraining data; Devanagari subwords are shared with Hindi/Marathi."
+    indicbert_coverage:
+      v1_supported: false
+      v2_supported: true
+      notes: "Supported in IndicBERT v2 (brx)."
+    langdetect_coverage:
+      supported: false
+      notes: "langdetect does not support Bodo; defaults to Hindi or Nepali on Devanagari input."
+    known_data_resources:
+      - name: "AI4Bharat IndicCorp v2 (brx)"
+        modality: "Text"
+        status: "Open access"
+      - name: "LDC-IL Bodo Speech and Text"
+        modality: "Text + Speech"
+        status: "Restricted academic license"
+
+  bhojpuri:
+    iso_639_3: "bho"
+    iso_639_1: null
+    primary_name: "Bhojpuri"
+    script: "Devanagari"
+    script_code: "Deva"
+    unicode_range: ["0900", "097F"]
+    historical_scripts: ["Kaithi"]
+    regions: ["Bihar", "Eastern Uttar Pradesh (Purvanchal)", "Jharkhand", "Nepal (Terai)"]
+    dialects: ["Standard Bhojpuri", "Bhojpuriya", "Gorakhpuri", "Nagpuria"]
+    negation_words: ["नाहीं", "ना", "मत", "नाइ", "nahin", "na", "mat"]
+    sentiment_lexicon_examples:
+      positive: ["नीक", "बढ़िया", "सुघर", "मस्त", "रंगदार", "neek", "badhiya", "sughar"]
+      negative: ["बेकार", "खराब", "बेतूका", "दुख", "लफड़ा", "bekar", "kharab", "lafda"]
+    slang_expressions: ["का हो", "बबुआ", "रंगबाज", "का बात बा", "होशियार", "गजबे"]
+    xlm_roberta_coverage:
+      status: "Indirect / High Hindi Transfer"
+      notes: "Not explicitly listed as standalone Bhojpuri; high morphological transfer from Hindi Devanagari representations."
+    indicbert_coverage:
+      v1_supported: false
+      v2_supported: true
+      notes: "IndicBERT v2 supports Bhojpuri (bho)."
+    langdetect_coverage:
+      supported: false
+      notes: "langdetect identifies Devanagari Bhojpuri as Hindi (hi) due to high lexical overlap."
+    known_data_resources:
+      - name: "InDRA Speech Resources / Bhojpuri ASR"
+        modality: "Audio + Transcript"
+        status: "Research access"
+      - name: "IndicCorp Bhojpuri Subset"
+        modality: "Text"
+        status: "Open access"
+      - name: "LDC-IL Bhojpuri Monolingual"
+        modality: "Text"
+        status: "Restricted academic license"
+
+  dogri:
+    iso_639_3: "doi"
+    iso_639_1: null
+    primary_name: "Dogri"
+    script: "Devanagari"
+    script_code: "Deva"
+    unicode_range: ["0900", "097F"]
+    historical_scripts: ["Dogra Akkhar", "Takri"]
+    regions: ["Jammu (J&K)", "Himachal Pradesh", "Northern Punjab"]
+    dialects: ["Standard Dogri", "Kandi", "Pahari-Dogri"]
+    negation_words: ["नेईं", "ना", "मत", "नाहीं", "nein", "na", "mat"]
+    sentiment_lexicon_examples:
+      positive: ["चंगा", "बधिया", "शैल", "खुशी", "मस्त", "changa", "badhiya", "shail"]
+      negative: ["मंदा", "खराब", "माड़ा", "दुक्ख", "manda", "maada", "kharab"]
+    slang_expressions: ["मिकी", "तुगी", "शा", "गे", "एह", "ओह", "कदा"]
+    xlm_roberta_coverage:
+      status: "Indirect / Devanagari Transfer"
+      notes: "Dogri is not an explicit XLM-R pretraining language; relies on Punjabi and Hindi cross-lingual transfer."
+    indicbert_coverage:
+      v1_supported: false
+      v2_supported: true
+      notes: "Dogri (doi) is supported in IndicBERT v2."
+    langdetect_coverage:
+      supported: false
+      notes: "langdetect identifies Devanagari Dogri as Hindi (hi)."
+    known_data_resources:
+      - name: "LDC-IL Dogri Sentence-Aligned Speech Resource"
+        modality: "Speech + Aligned Sentences"
+        status: "Academic licensing"
+      - name: "AI4Bharat IndicCorp v2 (doi)"
+        modality: "Text"
+        status: "Open access"
+
+  tamil:
+    iso_639_3: "tam"
+    iso_639_1: "ta"
+    primary_name: "Tamil"
+    script: "Tamil"
+    script_code: "Taml"
+    unicode_range: ["0B80", "0BFF"]
+    regions: ["Tamil Nadu", "Puducherry", "Sri Lanka", "Singapore", "Malaysia"]
+    dialects: ["Central Tamil", "Kongu Tamil", "Madurai", "Tirunelveli", "Jaffna Tamil"]
+    negation_words: ["இல்லை", "இல்ல", "மாட்டேன்", "கூடாது", "அல்ல", "வேண்டாம்", "illai", "illa", "vendam"]
+    sentiment_lexicon_examples:
+      joy: ["மகிழ்ச்சி", "அருமை", "சூப்பர்", "அற்புதம்", "கெத்து", "மகிழ்வு", "romba nalla", "magizhchi"]
+      sadness: ["சோகம்", "வருத்தம்", "ஏமாற்றம்", "கவலை", "துன்பம்", "valikidhu", "sogama irukku"]
+      anger: ["கோபம்", "ஆத்திரம்", "எரிச்சல்", "வெறி", "கடுப்பு", "kovam", "kaduppu"]
+      fear: ["பயம்", "நடுக்கம்", "அச்சம்", "திகில்", "பயமா இருக்கு", "bayam", "acham"]
+      neutral: ["சரி", "வழக்கமான", "சாதாரண", "செய்தி", "விவரம்", "seri", "normal"]
+    slang_expressions: ["மச்சி", "தல", "மாப்ள", "கெத்து", "வெறித்தனம்", "வேற லெவல்", "machi", "thala", "vera level"]
+    xlm_roberta_coverage:
+      status: "Supported"
+      notes: "Officially covered in XLM-RoBERTa pretraining corpora."
+    indicbert_coverage:
+      v1_supported: true
+      v2_supported: true
+      notes: "Fully supported in both IndicBERT v1 and IndicBERT v2."
+    muril_coverage:
+      status: "Supported"
+      notes: "Fully supported in Google MuRIL with native script and Latin transliteration."
+    langdetect_coverage:
+      supported: true
+      notes: "Deterministically identified via Tamil Unicode script block (0B80-0BFF)."
+    known_data_resources:
+      - name: "AI4Bharat IndicSentiment / IndicCorp (ta)"
+        modality: "Text"
+        status: "Open access"
+
+  telugu:
+    iso_639_3: "tel"
+    iso_639_1: "te"
+    primary_name: "Telugu"
+    script: "Telugu"
+    script_code: "Telu"
+    unicode_range: ["0C00", "0C7F"]
+    regions: ["Andhra Pradesh", "Telangana", "Yanam"]
+    dialects: ["Coastal Andhra", "Rayalaseema", "Telangana", "Uttarandhra"]
+    negation_words: ["లేదు", "కాదు", "వద్దు", "లేవు", "రాదు", "ledu", "kaadu", "vaddu"]
+    sentiment_lexicon_examples:
+      joy: ["సంతోషం", "బాగుంది", "అద్భుతం", "చాలా బాగుంది", "ఆనందం", "bagundi", "chala happy"]
+      sadness: ["బాధ", "దుఃఖం", "నిరాశ", "ఏడుపు", "దిగులు", "badha", "nirasha"]
+      anger: ["కోపం", "ఆగ్రహం", "మంట", "చిరాకు", "kopam", "chiraaku"]
+      fear: ["భయం", "ఆందోళన", "గాభరా", "భయపడు", "bhayam", "aandolana"]
+      neutral: ["సాధారణ", "విషయం", "వార్త", "సమాచారం", "సరే", "sare", "normal"]
+    slang_expressions: ["మావా", "బాస్", "రచ్చ", "కిర్రాక్", "తోపు", "ధమాకా", "mawa", "kirrak", "topu"]
+    xlm_roberta_coverage:
+      status: "Supported"
+      notes: "Officially covered in XLM-RoBERTa pretraining corpora."
+    indicbert_coverage:
+      v1_supported: true
+      v2_supported: true
+      notes: "Fully supported in both IndicBERT v1 and IndicBERT v2."
+    muril_coverage:
+      status: "Supported"
+      notes: "Fully supported in Google MuRIL with native script and Latin transliteration."
+    langdetect_coverage:
+      supported: true
+      notes: "Deterministically identified via Telugu Unicode script block (0C00-0C7F)."
+    known_data_resources:
+      - name: "AI4Bharat IndicSentiment / IndicCorp (te)"
+        modality: "Text"
+        status: "Open access"
+
+  malayalam:
+    iso_639_3: "mal"
+    iso_639_1: "ml"
+    primary_name: "Malayalam"
+    script: "Malayalam"
+    script_code: "Mlym"
+    unicode_range: ["0D00", "0D7F"]
+    regions: ["Kerala", "Lakshadweep", "Mahe"]
+    dialects: ["Travancore", "Malabar", "Kochi", "Central Kerala"]
+    negation_words: ["ഇല്ല", "അല്ല", "അരുത്", "വേണ്ട", "പാടില്ല", "illa", "alla", "venda"]
+    sentiment_lexicon_examples:
+      joy: ["സന്തോഷം", "നല്ലത്", "പൊളി", "അടിപൊളി", "ഗംഭീരം", "santhosham", "adipoli", "poli"]
+      sadness: ["വിഷമം", "സങ്കടം", "നിരാശ", "ദുഃഖം", "vedhana", "sankadam", "vishamam"]
+      anger: ["ദേഷ്യം", "കലിപ്പ്", "ദേഷ്യം വന്നു", "രോഷം", "deshyam", "kalipp"]
+      fear: ["ഭയം", "പേടി", "പരിഭ്രമം", "ആശങ്ക", "pedi", "bhayam", "aashanka"]
+      neutral: ["ശരി", "സാധാരണ", "വാർത്ത", "കാര്യം", "വിവരം", "shari", "normal"]
+    slang_expressions: ["അളിയാ", "പൊളി", "തകർത്തു", "സീൻ", "മച്ചാനെ", "വൈബ്", "aliya", "poli", "machane", "scene"]
+    xlm_roberta_coverage:
+      status: "Supported"
+      notes: "Officially covered in XLM-RoBERTa pretraining corpora."
+    indicbert_coverage:
+      v1_supported: true
+      v2_supported: true
+      notes: "Fully supported in both IndicBERT v1 and IndicBERT v2."
+    muril_coverage:
+      status: "Supported"
+      notes: "Fully supported in Google MuRIL with native script and Latin transliteration."
+    langdetect_coverage:
+      supported: true
+      notes: "Deterministically identified via Malayalam Unicode script block (0D00-0D7F)."
+    known_data_resources:
+      - name: "AI4Bharat IndicSentiment / IndicCorp (ml)"
+        modality: "Text"
+        status: "Open access"
+
+  kannada:
+    iso_639_3: "kan"
+    iso_639_1: "kn"
+    primary_name: "Kannada"
+    script: "Kannada"
+    script_code: "Knda"
+    unicode_range: ["0C80", "0CFF"]
+    regions: ["Karnataka", "Kasaragod", "Goa border"]
+    dialects: ["Old Mysuru", "North Karnataka (Dharwad)", "Coastal Kannada", "Kundagannada"]
+    negation_words: ["ಇಲ್ಲ", "ಅಲ್ಲ", "ಬೇಡ", "ಬಾರದು", "ಸಾಕು", "illa", "alla", "beda", "baaradu"]
+    sentiment_lexicon_examples:
+      joy: ["ಖುಷಿ", "ಚೆನ್ನಾಗಿದೆ", "ಅದ್ಭುತ", "ಸೂಪರ್", "ಸಂತೋಷ", "chennagide", "tumba khushi"]
+      sadness: ["ಬೇಜಾರು", "ದುಃಖ", "ನೋವು", "ನಿರಾಶೆ", "ಕಷ್ಟ", "bejaar", "novvu", "kashta"]
+      anger: ["ಕೋಪ", "ಸಿಟ್ಟು", "ಕಿರಿಕಿರಿ", "ಉರಿ", "kopam", "sittu", "kirikiri"]
+      fear: ["ಭಯ", "ಹೆದರಿಕೆ", "ಆತಂಕ", "ದಿಗಿಲು", "bhaya", "hedarike", "aatanka"]
+      neutral: ["ಸಾಮಾನ್ಯ", "ಸುದ್ದಿ", "ವಿಷಯ", "ಸರಿ", "ಮಾಹಿತಿ", "sari", "samanya"]
+    slang_expressions: ["ಗುರು", "ಮಗಾ", "ಬೆಂಕಿ", "ಚಿಂದಿ", "ಚಿನ್ನ", "ಹಾಕೋ", "guru", "maga", "chindi", "benki"]
+    xlm_roberta_coverage:
+      status: "Supported"
+      notes: "Officially covered in XLM-RoBERTa pretraining corpora."
+    indicbert_coverage:
+      v1_supported: true
+      v2_supported: true
+      notes: "Fully supported in both IndicBERT v1 and IndicBERT v2."
+    muril_coverage:
+      status: "Supported"
+      notes: "Fully supported in Google MuRIL with native script and Latin transliteration."
+    langdetect_coverage:
+      supported: true
+      notes: "Identified via Kannada Unicode script block (0C80-0CFF)."
+    known_data_resources:
+      - name: "AI4Bharat IndicSentiment / IndicCorp (kn)"
+        modality: "Text"
+        status: "Open access"
+
